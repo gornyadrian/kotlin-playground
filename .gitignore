@@ -1,0 +1,9 @@
+.idea/
+.gradle/
+out/
+build/
+captures/
+*.class
+*.log
+hs_err_pid*
+replay_pid*
