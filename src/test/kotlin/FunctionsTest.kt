@@ -1,5 +1,6 @@
 import kotlin.test.Test
 import kotlin.test.assertEquals
+import kotlin.test.assertIs
 
 class FunctionsTest {
 
@@ -10,7 +11,8 @@ class FunctionsTest {
         fun foo() {
             print("bar")
         }
-        assertEquals(Unit, foo())
+        // Assert that returned value is of type Unit.
+        assertIs<Unit>(foo())
     }
 
     @Test
@@ -19,6 +21,7 @@ class FunctionsTest {
         fun foo(): String {
             return "bar"
         }
+        assertIs<String>(foo())
         assertEquals("bar", foo())
     }
 
@@ -46,6 +49,8 @@ class FunctionsTest {
         fun sum(a: Int, b: Int): Int = a + b
         // Return type is inferred so it can be omitted.
         fun sumTypeInferred(a: Int, b: Int) = a + b
+        assertIs<Int>(sum(1, 1))
+        assertIs<Int>(sumTypeInferred(1 , 1))
         assertEquals(30, sum(10, 20))
         assertEquals(30, sumTypeInferred(10, 20))
     }
