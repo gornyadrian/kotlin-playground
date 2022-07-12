@@ -1,3 +1,5 @@
+package basicSyntax
+
 import kotlin.test.*
 
 class CollectionsTest {
